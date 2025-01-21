@@ -39,3 +39,12 @@ pqueue.o: pqueue.h pqueue.cpp cust.h
 
 clean:
 	rm -f sim sim.exe cust.o pqueue.o sim.o
+
+test: sim
+	@echo "Running simulation tests..."
+	@for f in tests/*.cmd; do \
+		echo "\nExecuting $$(basename $$f):"; \
+		while read args; do \
+			./sim $$args; \
+		done < $$f; \
+	done
