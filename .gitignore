@@ -1,0 +1,4 @@
+*.o
+/sim
+/sim.exe
+/checkout.log
